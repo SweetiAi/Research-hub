@@ -13,13 +13,13 @@
     
     <style>
         :root {
-            /* Minimalist Warm Neutral Palette identical to image_10bad6.jpg */
+            /* Minimalist Warm Neutral Palette based on image_10bad6.jpg */
             --bg-main: #f5f4f0;       
             --bg-sidebar: #eae8e1;    
             --text-primary: #2d2c29;  
             --text-secondary: #74726a;
             --accent-dark: #8e8075;   
-            --line-color: rgba(142, 128, 117, 0.15); 
+            --line-color: rgba(142, 128, 117, 0.18); /* Thin technical lines */
         }
 
         * {
@@ -116,7 +116,7 @@
             margin-bottom: 40px;
         }
 
-        .nav-item a {
+        .nav-menu a {
             display: flex;
             align-items: center;
             padding: 10px 14px;
@@ -129,12 +129,12 @@
             transition: all 0.2s;
         }
 
-        .nav-item.active a, .nav-item a:hover {
+        .nav-menu .nav-item.active a, .nav-menu a:hover {
             background-color: rgba(255, 255, 255, 0.4);
             color: var(--text-primary);
         }
 
-        .nav-item i {
+        .nav-menu i {
             margin-right: 12px;
             width: 16px;
         }
@@ -300,88 +300,84 @@
             font-weight: 600;
         }
 
-        /* --- ULTRA-MINIMAL CARDS GRID (INTEGRATED WITH BACKGROUND) --- */
+        /* --- CARDS GRID (MINIMALIST & LINEAR LIKE IMAGE_10BAD6) --- */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 32px;
         }
 
-        /* Completely flat card, seamless with background, top-line border only like image_10bad6.jpg */
+        /* Card container dissolves into background, surrounded by thin lines */
         .card {
-            background: transparent; /* Seamless with background */
-            border: none;
-            border-top: 1px solid var(--line-color); /* Just a minimal top line separator */
+            background: transparent; /* No more white background */
+            border: 1px solid var(--line-color); /* Faint technical borders */
             border-radius: 0px; 
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding-top: 24px; /* Space right under the line */
             transition: opacity 0.2s;
         }
 
-        .card:hover {
-            opacity: 0.85; /* Soft interactive feedback instead of lifting shadow */
-        }
-
-        /* Floating Minimal Image Area without colorful or white boxes */
         .card-image-area {
-            height: 150px;
-            background: transparent; /* No box background */
+            height: 160px;
+            background: transparent; /* Seamless blend */
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
+            border-bottom: 1px solid var(--line-color);
             overflow: hidden;
         }
 
-        /* Moire / Schematic Vector Art Styling */
+        /* Fine Technical Vector Arts */
         .card-vector-art {
-            width: 90%;
-            height: 90%;
+            width: 75%;
+            height: 75%;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.12; /* Very elegant, faded thin-line illustration */
-            filter: grayscale(1) contrast(0.9);
+            opacity: 0.12; /* Faint line-art look matching the photo */
+            filter: contrast(0.7) grayscale(1);
         }
 
         .card-badge {
             position: absolute;
-            top: 0px;
-            left: 0px;
-            font-size: 9px;
+            top: 12px;
+            left: 12px;
+            font-size: 8.5px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-secondary);
             background: transparent;
-            opacity: 0.6;
+            padding: 0;
+            border: none;
         }
 
         .card-content {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            padding: 20px 16px; /* Elegant compact spacing */
         }
 
         .card-title {
-            font-size: 16px;
+            font-size: 15.5px;
             font-weight: 600;
             line-height: 1.4;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             text-decoration: none;
             color: var(--text-primary);
         }
 
         .card-desc {
             color: var(--text-secondary);
-            font-size: 13px;
+            font-size: 12.5px;
             line-height: 1.5;
             margin-bottom: 16px;
         }
 
+        /* Minimalist Tags matching the warm beige reference */
         .card-tags {
             display: flex;
             flex-wrap: wrap;
@@ -391,11 +387,11 @@
         }
 
         .tag {
-            background: transparent;
-            border: 1px solid var(--line-color);
+            background: rgba(234, 232, 225, 0.5); /* Soft tan/beige tone */
+            border: none;
             padding: 2px 8px;
             border-radius: 4px;
-            font-size: 11px;
+            font-size: 10.5px;
             color: var(--text-secondary);
         }
 
@@ -403,9 +399,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 11.5px;
+            font-size: 11px;
             color: var(--text-secondary);
-            border-top: 1px dashed var(--line-color);
+            border-top: 1px solid var(--line-color);
             padding-top: 12px;
         }
 
@@ -626,7 +622,7 @@
             <div class="card">
                 <div class="card-image-area">
                     <span class="card-badge">Presentation</span>
-                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b5/Complex_plane_bivariate_normal_distribution.svg'); opacity: 0.12; transform: scale(1.05);"></div>
+                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b5/Complex_plane_bivariate_normal_distribution.svg'); opacity: 0.12; transform: scale(1.1);"></div>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/allostatic-load.pdf&embedded=true" target="_blank" class="card-title">
