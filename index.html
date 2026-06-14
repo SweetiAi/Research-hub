@@ -11,13 +11,13 @@
     
     <style>
         :root {
-            --bg-main: #f5f4f0;       
+            /* Warm Minimal Sepia/Beige Theme based on image_10bad6.jpg */
+            --bg-main: #f4f3ee;       
             --bg-sidebar: #eae8e1;    
-            --text-primary: #2a2925;  
-            --text-secondary: #706e64;
-            --accent-dark: #8c7e74;   
-            --line-color: rgba(140, 126, 116, 0.15); 
-            --fibonacci-line: rgba(140, 126, 116, 0.25);
+            --text-primary: #2d2c29;  
+            --text-secondary: #74726a;
+            --accent-dark: #8e8075;   
+            --line-color: rgba(142, 128, 117, 0.12); 
         }
 
         * {
@@ -55,26 +55,26 @@
         }
 
         .logo-box {
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             margin: 0 auto 16px auto;
-            border: 1px dashed var(--accent-dark);
+            border: 1px solid var(--text-secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-primary);
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .profile-section h1 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 600;
             margin-bottom: 6px;
         }
 
         .profile-section p {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -94,20 +94,19 @@
             text-decoration: none;
             font-size: 13.5px;
             font-weight: 500;
-            border-radius: 8px;
+            border-radius: 6px;
             margin-bottom: 4px;
             transition: all 0.2s;
         }
 
         .nav-item.active a, .nav-item a:hover {
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.4);
             color: var(--text-primary);
         }
 
         .nav-item i {
             margin-right: 12px;
             width: 16px;
-            font-size: 14px;
         }
 
         .section-title {
@@ -129,12 +128,11 @@
             padding: 6px 0;
             display: flex;
             align-items: center;
-            cursor: pointer;
         }
 
         .area-list li::before {
             content: "○";
-            font-size: 10px;
+            font-size: 9px;
             margin-right: 10px;
             color: var(--accent-dark);
         }
@@ -164,7 +162,7 @@
             padding: 10px 16px 10px 38px;
             border: 1px solid var(--line-color);
             background: transparent;
-            border-radius: 6px;
+            border-radius: 4px;
             font-size: 13.5px;
             outline: none;
             color: var(--text-primary);
@@ -182,14 +180,14 @@
             background: transparent;
             color: var(--text-primary);
             padding: 8px 16px;
-            border-radius: 6px;
+            border-radius: 4px;
             border: 1px solid var(--text-primary);
             font-size: 13px;
             font-weight: 500;
             cursor: pointer;
         }
 
-        /* --- HERO BANNER WITH EMBEDDED FIBONACCI --- */
+        /* --- HERO BANNER --- */
         .hero-banner {
             background-color: transparent;
             border-bottom: 1px solid var(--line-color);
@@ -199,11 +197,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            overflow: hidden;
         }
 
         .hero-content {
-            max-width: 60%;
+            max-width: 65%;
             z-index: 2;
         }
 
@@ -217,27 +214,30 @@
         }
 
         .hero-content h2 {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 400;
             line-height: 1.2;
             color: var(--text-primary);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .hero-content p {
             color: var(--text-secondary);
-            font-size: 15px;
+            font-size: 14.5px;
             line-height: 1.6;
         }
 
-        /* Live Vector Fibonacci Spiral Area */
-        .fibonacci-container {
+        /* High-Quality Transparent Vector Fibonacci Background Placement */
+        .fibonacci-bg {
             position: absolute;
             right: -20px;
-            top: -20px;
-            width: 300px;
-            height: 300px;
-            opacity: 0.8;
+            top: -40px;
+            width: 380px;
+            height: 380px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/93/Fibonacci_spiral_34.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.07; /* Extremely faint and elegant blueprint line */
             pointer-events: none;
         }
 
@@ -257,7 +257,6 @@
             font-size: 13px;
             color: var(--text-secondary);
             cursor: pointer;
-            border-radius: 4px;
         }
 
         .filter-btn.active {
@@ -270,7 +269,7 @@
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 32px;
         }
 
         .card {
@@ -280,25 +279,36 @@
             border-top: 1px solid var(--line-color);
             display: flex;
             flex-direction: column;
-            padding-top: 20px;
+            padding-top: 24px;
         }
 
+        /* Card Image Header Area holding the specialized technical graphics */
         .card-image-area {
-            height: 150px;
-            background: transparent;
+            height: 160px;
+            background: rgba(234, 232, 225, 0.3);
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid var(--line-color);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             overflow: hidden;
+        }
+
+        .card-vector-art {
+            width: 85%;
+            height: 85%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15; /* Subtle blueprint schematic look */
+            filter: contrast(0.8);
         }
 
         .card-badge {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 12px;
+            left: 12px;
             font-size: 9px;
             font-weight: 700;
             text-transform: uppercase;
@@ -306,7 +316,7 @@
             color: var(--text-secondary);
             background: var(--bg-main);
             padding: 2px 6px;
-            z-index: 2;
+            border: 1px solid var(--line-color);
         }
 
         .card-content {
@@ -328,7 +338,7 @@
             color: var(--text-secondary);
             font-size: 13px;
             line-height: 1.5;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .card-tags {
@@ -336,7 +346,7 @@
             flex-wrap: wrap;
             gap: 6px;
             margin-top: auto;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .tag {
@@ -355,7 +365,7 @@
             font-size: 11.5px;
             color: var(--text-secondary);
             border-top: 1px dashed var(--line-color);
-            padding-top: 12px;
+            padding-top: 14px;
         }
 
         .pdf-link {
@@ -406,25 +416,7 @@
                 <h2>Exploring the nature of mind, intelligence, and conscious experience.</h2>
                 <p>Research, experiments, and design at the intersection of cognitive science, AI, and human experience.</p>
             </div>
-            
-            <div class="fibonacci-container" style="position: absolute; right: -50px; top: -60px; width: 450px; height: 450px; opacity: 0.15; pointer-events: none;">
-                <svg viewBox="0 0 400 400" width="100%" height="100%" style="fill: none; stroke: var(--text-primary); stroke-width: 0.8; stroke-linecap: round;">
-                    <path d="M261.8,261.8 L261.8,100 L100,100 L100,261.8 Z" stroke-dasharray="2,2"/>
-                    <path d="M100,100 L100,161.8 L161.8,161.8 L161.8,100 Z" stroke-dasharray="2,2"/>
-                    <path d="M161.8,100 L161.8,123.6 L138.2,123.6 L138.2,100 Z" stroke-dasharray="2,2"/>
-                    <path d="M 261.8,261.8 
-                             A 161.8,161.8 0 0,1 100,100
-                             A 61.8,61.8 0 0,1 161.8,161.8
-                             A 23.6,23.6 0 0,1 138.2,138.2
-                             A 9,9 0 0,1 147.2,147.2" 
-                          style="stroke-width: 1.2; stroke: var(--accent-dark);"/>
-                    <line x1="0" y1="261.8" x2="400" y2="261.8" />
-                    <line x1="100" y1="0" x2="100" y2="400" />
-                    <line x1="161.8" y1="0" x2="161.8" y2="400" />
-                    <circle cx="161.8" cy="161.8" r="100" stroke-width="0.4" stroke-dasharray="4,4"/>
-                    <circle cx="100" cy="100" r="161.8" stroke-width="0.4"/>
-                </svg>
-            </div>
+            <div class="fibonacci-bg"></div>
         </div>
 
         <div class="filter-bar">
@@ -438,13 +430,7 @@
             <div class="card">
                 <div class="card-image-area">
                     <span class="card-badge">Paper</span>
-                    <svg width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.4; fill: none;">
-                        <circle cx="50%" cy="50%" r="40" />
-                        <circle cx="50%" cy="50%" r="25" />
-                        <line x1="0" y1="50%" x2="100%" y2="50%" />
-                        <line x1="50%" y1="0" x2="50%" y2="100%" />
-                        <polygon points="150,35 175,75 125,75" style="transform: scale(0.5) translate(110px, 40px);" />
-                    </svg>
+                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a2/Neural_network_bottleneck.svg');"></div>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/factor-graph.pdf&embedded=true" target="_blank" class="card-title">
@@ -465,13 +451,7 @@
             <div class="card">
                 <div class="card-image-area">
                     <span class="card-badge">Presentation</span>
-                    <svg width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.4; fill: none;">
-                        <circle cx="50%" cy="50%" r="10" />
-                        <circle cx="50%" cy="50%" r="20" />
-                        <circle cx="50%" cy="50%" r="30" stroke-dasharray="3,3" />
-                        <circle cx="50%" cy="50%" r="40" />
-                        <circle cx="50%" cy="50%" r="50" />
-                    </svg>
+                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Wave_packet.svg'); opacity: 0.25;"></div>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/deeply-felt-affect.pdf&embedded=true" target="_blank" class="card-title">
@@ -492,11 +472,7 @@
             <div class="card">
                 <div class="card-image-area">
                     <span class="card-badge">Presentation</span>
-                    <svg width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.5; fill: none;">
-                        <path d="M 10,75 Q 45,5 80,75 T 150,75 T 220,75 T 290,75" style="transform: scale(0.8) translate(20px, 20px);" />
-                        <path d="M 10,75 Q 45,35 80,75 T 150,75 T 220,75 T 290,75" style="transform: scale(0.8) translate(20px, 20px); opacity: 0.5;" />
-                        <line x1="0" y1="50%" x2="100%" y2="50%" stroke-dasharray="2,4" />
-                    </svg>
+                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6c/Vector_Field.svg'); opacity: 0.2;"></div>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/sonoception-presentation.pdf&embedded=true" target="_blank" class="card-title">
@@ -517,11 +493,7 @@
             <div class="card">
                 <div class="card-image-area">
                     <span class="card-badge">Paper</span>
-                    <svg width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.4; fill: none;">
-                        <rect x="35%" y="25%" width="30%" height="50%" />
-                        <circle cx="50%" cy="50%" r="15" />
-                        <line x1="20%" y1="25%" x2="80%" y2="75%" />
-                    </svg>
+                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/Simplicial_complex_example.svg'); opacity: 0.22;"></div>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/advanced-haptics.pdf&embedded=true" target="_blank" class="card-title">
@@ -542,10 +514,7 @@
             <div class="card">
                 <div class="card-image-area">
                     <span class="card-badge">Presentation</span>
-                    <svg width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.4; fill: none;">
-                        <path d="M10 10 H 290 V 140 H 10 Z M 50 10 V 140 M 100 10 V 140 M 150 10 V 140 M 200 10 V 140 M 250 10 V 140" style="transform: scale(1);" />
-                        <circle cx="50%" cy="50%" r="35" style="stroke: var(--text-secondary); stroke-width: 0.6;" />
-                    </svg>
+                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b5/Complex_plane_bivariate_normal_distribution.svg'); opacity: 0.15; transform: scale(1.1);"></div>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/allostatic-load.pdf&embedded=true" target="_blank" class="card-title">
