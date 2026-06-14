@@ -13,14 +13,13 @@
     
     <style>
         :root {
-            /* Warm Minimal Sepia/Beige Theme based on image_10bad6.jpg */
-            --bg-main: #f4f3ee;       
+            /* Minimalist Warm Neutral Palette identical to image_10bad6.jpg */
+            --bg-main: #f5f4f0;       
             --bg-sidebar: #eae8e1;    
             --text-primary: #2d2c29;  
             --text-secondary: #74726a;
             --accent-dark: #8e8075;   
             --line-color: rgba(142, 128, 117, 0.15); 
-            --card-shadow: 0 4px 20px rgba(42, 41, 37, 0.02);
         }
 
         * {
@@ -42,15 +41,12 @@
         .mobile-header {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 60px;
             background: var(--bg-sidebar);
             padding: 0 20px;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
             border-bottom: 1px solid var(--line-color);
             z-index: 1000;
         }
@@ -265,15 +261,15 @@
             line-height: 1.6;
         }
 
-       .fibonacci-bg {
+        .fibonacci-bg {
             position: absolute;
             right: 0px;
-            bottom: 0px; /* Aligned to the bottom to prevent cutting off at the top */
+            bottom: 0px;
             width: 340px;
-            height: 100%; /* Spans the full height of the banner safely */
+            height: 100%;
             background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/93/Fibonacci_spiral_34.svg');
             background-size: contain;
-            background-position: bottom right; /* Forces the spiral to anchor inside the visible box */
+            background-position: bottom right;
             background-repeat: no-repeat;
             opacity: 0.08; 
             pointer-events: none;
@@ -304,77 +300,77 @@
             font-weight: 600;
         }
 
-        /* --- CARDS GRID (FIXED BOXES & BORDERS) --- */
+        /* --- ULTRA-MINIMAL CARDS GRID (INTEGRATED WITH BACKGROUND) --- */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 32px;
+            gap: 40px;
         }
 
-        /* Fixed Card Box Structure with full borders */
+        /* Completely flat card, seamless with background, top-line border only like image_10bad6.jpg */
         .card {
-            background: white;
-            border: 1px solid var(--line-color);
+            background: transparent; /* Seamless with background */
+            border: none;
+            border-top: 1px solid var(--line-color); /* Just a minimal top line separator */
             border-radius: 0px; 
             overflow: hidden;
-            box-shadow: var(--card-shadow);
             display: flex;
             flex-direction: column;
-            transition: transform 0.2s, box-shadow 0.2s;
+            padding-top: 24px; /* Space right under the line */
+            transition: opacity 0.2s;
         }
 
         .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(42, 41, 37, 0.05);
+            opacity: 0.85; /* Soft interactive feedback instead of lifting shadow */
         }
 
+        /* Floating Minimal Image Area without colorful or white boxes */
         .card-image-area {
-            height: 160px;
-            background: rgba(234, 232, 225, 0.2);
+            height: 150px;
+            background: transparent; /* No box background */
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 1px solid var(--line-color); /* Bottom line separation inside card */
+            margin-bottom: 16px;
             overflow: hidden;
         }
 
+        /* Moire / Schematic Vector Art Styling */
         .card-vector-art {
-            width: 85%;
-            height: 85%;
+            width: 90%;
+            height: 90%;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.15; 
-            filter: contrast(0.8);
+            opacity: 0.12; /* Very elegant, faded thin-line illustration */
+            filter: grayscale(1) contrast(0.9);
         }
 
         .card-badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
+            top: 0px;
+            left: 0px;
             font-size: 9px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-secondary);
-            background: var(--bg-main);
-            padding: 2px 6px;
-            border: 1px solid var(--line-color);
+            background: transparent;
+            opacity: 0.6;
         }
 
         .card-content {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
-            padding: 24px; /* Added internal padding back for true card structure */
         }
 
         .card-title {
             font-size: 16px;
             font-weight: 600;
             line-height: 1.4;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-decoration: none;
             color: var(--text-primary);
         }
@@ -383,7 +379,7 @@
             color: var(--text-secondary);
             font-size: 13px;
             line-height: 1.5;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .card-tags {
@@ -391,7 +387,7 @@
             flex-wrap: wrap;
             gap: 6px;
             margin-top: auto;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .tag {
@@ -410,7 +406,7 @@
             font-size: 11.5px;
             color: var(--text-secondary);
             border-top: 1px dashed var(--line-color);
-            padding-top: 14px;
+            padding-top: 12px;
         }
 
         .pdf-link {
@@ -424,17 +420,17 @@
             display: none;
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.1);
             z-index: 998;
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES (FIXED MOBILE) --- */
+        /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 992px) {
             aside {
-                transform: translateX(-100%); /* Hide sidebar offscreen */
+                transform: translateX(-100%);
             }
             aside.open {
-                transform: translateX(0); /* Slide in */
+                transform: translateX(0);
             }
             .sidebar-overlay.show {
                 display: block;
@@ -442,7 +438,7 @@
             main {
                 margin-left: 0;
                 width: 100%;
-                padding: 90px 20px 40px 20px; /* Header clearing */
+                padding: 90px 20px 40px 20px;
             }
             .mobile-header {
                 display: flex;
@@ -462,11 +458,10 @@
                 max-width: 100%;
             }
             .fibonacci-bg {
-                width: 250px;
-                height: 250px;
-                right: -40px;
-                bottom: -40px;
-                top: auto;
+                width: 220px;
+                height: 220px;
+                right: -20px;
+                bottom: -20px;
             }
         }
     </style>
@@ -565,7 +560,7 @@
             <div class="card">
                 <div class="card-image-area">
                     <span class="card-badge">Presentation</span>
-                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Wave_packet.svg'); opacity: 0.25;"></div>
+                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Wave_packet.svg'); opacity: 0.2;"></div>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/deeply-felt-affect.pdf&embedded=true" target="_blank" class="card-title">
@@ -587,7 +582,7 @@
             <div class="card">
                 <div class="card-image-area">
                     <span class="card-badge">Presentation</span>
-                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6c/Vector_Field.svg'); opacity: 0.2;"></div>
+                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6c/Vector_Field.svg'); opacity: 0.16;"></div>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/sonoception-presentation.pdf&embedded=true" target="_blank" class="card-title">
@@ -609,7 +604,7 @@
             <div class="card">
                 <div class="card-image-area">
                     <span class="card-badge">Paper</span>
-                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/Simplicial_complex_example.svg'); opacity: 0.22;"></div>
+                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/Simplicial_complex_example.svg'); opacity: 0.18;"></div>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/advanced-haptics.pdf&embedded=true" target="_blank" class="card-title">
@@ -631,7 +626,7 @@
             <div class="card">
                 <div class="card-image-area">
                     <span class="card-badge">Presentation</span>
-                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b5/Complex_plane_bivariate_normal_distribution.svg'); opacity: 0.15; transform: scale(1.1);"></div>
+                    <div class="card-vector-art" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b5/Complex_plane_bivariate_normal_distribution.svg'); opacity: 0.12; transform: scale(1.05);"></div>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/allostatic-load.pdf&embedded=true" target="_blank" class="card-title">
@@ -652,7 +647,7 @@
         </div>
     </main>
 
-    <!-- JAVASCRIPT FOR TOGGLE SIDEBAR (FIXED BACK) -->
+    <!-- JAVASCRIPT FOR TOGGLE SIDEBAR -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
