@@ -4,24 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic & Research Portfolio</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            /* Minimalist Warm Neutral Palette based on image_10bad6.jpg */
-            --bg-main: #f5f4f0;       /* Warm sand/chalky off-white */
-            --bg-sidebar: #eae8e1;    /* Slightly darker beige for contrast */
-            --text-primary: #2a2925;  /* Deep charcoal/soft black */
-            --text-secondary: #706e64;/* Muted sepia grey */
-            --accent-tan: #cfc2b6;    /* Soft tan outline */
-            --accent-dark: #8c7e74;   /* Line art color */
-            --card-shadow: 0 4px 20px rgba(42, 41, 37, 0.02);
-            --line-color: rgba(140, 126, 116, 0.15); /* Very thin, delicate lines */
+            --bg-main: #f5f4f0;       
+            --bg-sidebar: #eae8e1;    
+            --text-primary: #2a2925;  
+            --text-secondary: #706e64;
+            --accent-dark: #8c7e74;   
+            --line-color: rgba(140, 126, 116, 0.15); 
+            --fibonacci-line: rgba(140, 126, 116, 0.25);
         }
 
         * {
@@ -58,12 +54,10 @@
             margin-bottom: 40px;
         }
 
-        /* Sacred Geometry Logo Placeholder */
         .logo-box {
             width: 70px;
             height: 70px;
             margin: 0 auto 16px auto;
-            background: transparent;
             border: 1px dashed var(--accent-dark);
             border-radius: 50%;
             display: flex;
@@ -71,22 +65,12 @@
             justify-content: center;
             color: var(--text-primary);
             font-size: 20px;
-            position: relative;
-        }
-        .logo-box::before {
-            content: '';
-            position: absolute;
-            width: 85%;
-            height: 85%;
-            border: 1px solid var(--line-color);
-            border-radius: 50%;
         }
 
         .profile-section h1 {
             font-size: 22px;
             font-weight: 600;
             margin-bottom: 6px;
-            color: var(--text-primary);
         }
 
         .profile-section p {
@@ -124,7 +108,6 @@
             margin-right: 12px;
             width: 16px;
             font-size: 14px;
-            color: var(--text-secondary);
         }
 
         .section-title {
@@ -147,10 +130,6 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            transition: color 0.2s;
-        }
-        .area-list li:hover {
-            color: var(--text-primary);
         }
 
         .area-list li::before {
@@ -208,37 +187,24 @@
             font-size: 13px;
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.2s;
-        }
-        .btn-touch:hover {
-            background: var(--text-primary);
-            color: var(--bg-main);
         }
 
-        /* Hero Banner with Technical Grid/Lines background */
+        /* --- HERO BANNER WITH EMBEDDED FIBONACCI --- */
         .hero-banner {
             background-color: transparent;
             border-bottom: 1px solid var(--line-color);
-            padding-bottom: 50px;
+            padding-bottom: 60px;
             margin-bottom: 40px;
             position: relative;
-        }
-
-        /* Decorative thin geometric line like image_10bad6.jpg */
-        .hero-banner::after {
-            content: '';
-            position: absolute;
-            right: 10%;
-            top: 10%;
-            width: 120px;
-            height: 120px;
-            border: 1px solid var(--line-color);
-            border-radius: 50%;
-            pointer-events: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
         }
 
         .hero-content {
-            max-width: 650px;
+            max-width: 60%;
+            z-index: 2;
         }
 
         .hero-tag {
@@ -251,7 +217,6 @@
         }
 
         .hero-content h2 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 38px;
             font-weight: 400;
             line-height: 1.2;
@@ -263,6 +228,17 @@
             color: var(--text-secondary);
             font-size: 15px;
             line-height: 1.6;
+        }
+
+        /* Live Vector Fibonacci Spiral Area */
+        .fibonacci-container {
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            width: 300px;
+            height: 300px;
+            opacity: 0.8;
+            pointer-events: none;
         }
 
         /* Filters */
@@ -299,18 +275,16 @@
 
         .card {
             background: transparent;
-            border-radius: 0px; /* Completely sharp, elegant edges like blueprint */
+            border-radius: 0px; 
             overflow: hidden;
             border-top: 1px solid var(--line-color);
             display: flex;
             flex-direction: column;
             padding-top: 20px;
-            transition: opacity 0.2s;
         }
 
-        /* Blueprint Line Art Area replacing images */
         .card-image-area {
-            height: 140px;
+            height: 150px;
             background: transparent;
             position: relative;
             display: flex;
@@ -318,27 +292,7 @@
             justify-content: center;
             border: 1px solid var(--line-color);
             margin-bottom: 16px;
-        }
-
-        /* Blueprint Circles Grid Effect inside card headers */
-        .blueprint-art {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            border: 1px solid var(--line-color);
-            border-radius: 50%;
-        }
-        .blueprint-art::before {
-            content: '';
-            position: absolute;
-            top: 50%; left: -20px; right: -20px;
-            height: 1px; background: var(--line-color);
-        }
-        .blueprint-art::after {
-            content: '';
-            position: absolute;
-            left: 50%; top: -20px; bottom: -20px;
-            width: 1px; background: var(--line-color);
+            overflow: hidden;
         }
 
         .card-badge {
@@ -350,6 +304,9 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-secondary);
+            background: var(--bg-main);
+            padding: 2px 6px;
+            z-index: 2;
         }
 
         .card-content {
@@ -365,10 +322,6 @@
             margin-bottom: 10px;
             text-decoration: none;
             color: var(--text-primary);
-            transition: color 0.2s;
-        }
-        .card-title:hover {
-            color: var(--text-secondary);
         }
 
         .card-desc {
@@ -414,7 +367,6 @@
 </head>
 <body>
 
-    <!-- SIDEBAR -->
     <aside>
         <div class="profile-section">
             <div class="logo-box">
@@ -439,9 +391,7 @@
         </ul>
     </aside>
 
-    <!-- MAIN CONTENT -->
     <main>
-        <!-- Top Bar -->
         <div class="top-bar">
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -450,30 +400,42 @@
             <button class="btn-touch">Get in touch</button>
         </div>
 
-        <!-- Hero Banner -->
         <div class="hero-banner">
             <div class="hero-content">
                 <p class="hero-tag">Research Portfolio</p>
                 <h2>Exploring the nature of mind, intelligence, and conscious experience.</h2>
                 <p>Research, experiments, and design at the intersection of cognitive science, AI, and human experience.</p>
             </div>
+            
+            <div class="fibonacci-container">
+                <svg viewBox="0 0 100 100" width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.3; fill: none;">
+                    <path d="M55,55 A1,1 0 0,1 55,54 A2,2 0 0,1 57,54 A3,3 0 0,1 57,57 A5,5 0 0,1 52,57 A8,8 0 0,1 52,49 A13,13 0 0,1 65,49 A21,21 0 0,1 65,70 A34,34 0 0,1 31,70 A55,55 0 0,1 31,15 A89,89 0 0,1 120,15" />
+                    <line x1="0" y1="55" x2="100" y2="55" />
+                    <line x1="55" y1="0" x2="55" y2="100" />
+                    <circle cx="55" cy="55" r="34" />
+                    <circle cx="55" cy="55" r="2" />
+                </svg>
+            </div>
         </div>
 
-        <!-- Filters -->
         <div class="filter-bar">
             <button class="filter-btn active">All Work</button>
             <button class="filter-btn">Papers</button>
             <button class="filter-btn">Presentations</button>
         </div>
 
-        <!-- Cards Grid -->
         <div class="cards-grid">
             
-            <!-- Card 1 -->
             <div class="card">
                 <div class="card-image-area">
-                    <div class="blueprint-art"></div>
                     <span class="card-badge">Paper</span>
+                    <svg width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.4; fill: none;">
+                        <circle cx="50%" cy="50%" r="40" />
+                        <circle cx="50%" cy="50%" r="25" />
+                        <line x1="0" y1="50%" x2="100%" y2="50%" />
+                        <line x1="50%" y1="0" x2="50%" y2="100%" />
+                        <polygon points="150,35 175,75 125,75" style="transform: scale(0.5) translate(110px, 40px);" />
+                    </svg>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/factor-graph.pdf&embedded=true" target="_blank" class="card-title">
@@ -491,11 +453,16 @@
                 </div>
             </div>
 
-            <!-- Card 2 -->
             <div class="card">
                 <div class="card-image-area">
-                    <div class="blueprint-art" style="border-radius: 0px; transform: rotate(45deg);"></div>
                     <span class="card-badge">Presentation</span>
+                    <svg width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.4; fill: none;">
+                        <circle cx="50%" cy="50%" r="10" />
+                        <circle cx="50%" cy="50%" r="20" />
+                        <circle cx="50%" cy="50%" r="30" stroke-dasharray="3,3" />
+                        <circle cx="50%" cy="50%" r="40" />
+                        <circle cx="50%" cy="50%" r="50" />
+                    </svg>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/deeply-felt-affect.pdf&embedded=true" target="_blank" class="card-title">
@@ -513,11 +480,14 @@
                 </div>
             </div>
 
-            <!-- Card 3 -->
             <div class="card">
                 <div class="card-image-area">
-                    <div class="blueprint-art" style="width: 50px; height: 50px;"></div>
                     <span class="card-badge">Presentation</span>
+                    <svg width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.5; fill: none;">
+                        <path d="M 10,75 Q 45,5 80,75 T 150,75 T 220,75 T 290,75" style="transform: scale(0.8) translate(20px, 20px);" />
+                        <path d="M 10,75 Q 45,35 80,75 T 150,75 T 220,75 T 290,75" style="transform: scale(0.8) translate(20px, 20px); opacity: 0.5;" />
+                        <line x1="0" y1="50%" x2="100%" y2="50%" stroke-dasharray="2,4" />
+                    </svg>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/sonoception-presentation.pdf&embedded=true" target="_blank" class="card-title">
@@ -535,11 +505,14 @@
                 </div>
             </div>
 
-            <!-- Card 4 -->
             <div class="card">
                 <div class="card-image-area">
-                    <div class="blueprint-art" style="border-radius: 30% 70%;"></div>
                     <span class="card-badge">Paper</span>
+                    <svg width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.4; fill: none;">
+                        <rect x="35%" y="25%" width="30%" height="50%" />
+                        <circle cx="50%" cy="50%" r="15" />
+                        <line x1="20%" y1="25%" x2="80%" y2="75%" />
+                    </svg>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/advanced-haptics.pdf&embedded=true" target="_blank" class="card-title">
@@ -557,11 +530,13 @@
                 </div>
             </div>
 
-            <!-- Card 5 -->
             <div class="card">
                 <div class="card-image-area">
-                    <div class="blueprint-art" style="border: 1px dashed var(--accent-dark);"></div>
                     <span class="card-badge">Presentation</span>
+                    <svg width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.4; fill: none;">
+                        <path d="M10 10 H 290 V 140 H 10 Z M 50 10 V 140 M 100 10 V 140 M 150 10 V 140 M 200 10 V 140 M 250 10 V 140" style="transform: scale(1);" />
+                        <circle cx="50%" cy="50%" r="35" style="stroke: var(--text-secondary); stroke-width: 0.6;" />
+                    </svg>
                 </div>
                 <div class="card-content">
                     <a href="https://docs.google.com/gview?url=https://sweetiai.github.io/Research-hub/allostatic-load.pdf&embedded=true" target="_blank" class="card-title">
