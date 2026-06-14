@@ -407,13 +407,22 @@
                 <p>Research, experiments, and design at the intersection of cognitive science, AI, and human experience.</p>
             </div>
             
-            <div class="fibonacci-container">
-                <svg viewBox="0 0 100 100" width="100%" height="100%" style="stroke: var(--fibonacci-line); stroke-width: 0.3; fill: none;">
-                    <path d="M55,55 A1,1 0 0,1 55,54 A2,2 0 0,1 57,54 A3,3 0 0,1 57,57 A5,5 0 0,1 52,57 A8,8 0 0,1 52,49 A13,13 0 0,1 65,49 A21,21 0 0,1 65,70 A34,34 0 0,1 31,70 A55,55 0 0,1 31,15 A89,89 0 0,1 120,15" />
-                    <line x1="0" y1="55" x2="100" y2="55" />
-                    <line x1="55" y1="0" x2="55" y2="100" />
-                    <circle cx="55" cy="55" r="34" />
-                    <circle cx="55" cy="55" r="2" />
+            <div class="fibonacci-container" style="position: absolute; right: -50px; top: -60px; width: 450px; height: 450px; opacity: 0.15; pointer-events: none;">
+                <svg viewBox="0 0 400 400" width="100%" height="100%" style="fill: none; stroke: var(--text-primary); stroke-width: 0.8; stroke-linecap: round;">
+                    <path d="M261.8,261.8 L261.8,100 L100,100 L100,261.8 Z" stroke-dasharray="2,2"/>
+                    <path d="M100,100 L100,161.8 L161.8,161.8 L161.8,100 Z" stroke-dasharray="2,2"/>
+                    <path d="M161.8,100 L161.8,123.6 L138.2,123.6 L138.2,100 Z" stroke-dasharray="2,2"/>
+                    <path d="M 261.8,261.8 
+                             A 161.8,161.8 0 0,1 100,100
+                             A 61.8,61.8 0 0,1 161.8,161.8
+                             A 23.6,23.6 0 0,1 138.2,138.2
+                             A 9,9 0 0,1 147.2,147.2" 
+                          style="stroke-width: 1.2; stroke: var(--accent-dark);"/>
+                    <line x1="0" y1="261.8" x2="400" y2="261.8" />
+                    <line x1="100" y1="0" x2="100" y2="400" />
+                    <line x1="161.8" y1="0" x2="161.8" y2="400" />
+                    <circle cx="161.8" cy="161.8" r="100" stroke-width="0.4" stroke-dasharray="4,4"/>
+                    <circle cx="100" cy="100" r="161.8" stroke-width="0.4"/>
                 </svg>
             </div>
         </div>
