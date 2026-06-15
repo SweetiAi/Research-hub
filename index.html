@@ -511,13 +511,41 @@
         </div>
 
         <!-- Hero Banner -->
-        <div class="hero-banner">
-            <div class="hero-content">
-                <p class="hero-tag">Research Lab</p>
-                <h2>A graden of Ideas</h2>
-                <p>Research, experiments, writings, and projects connected through curiosity.</p>
+        <div class="hero-banner" style="
+            background-color: var(--bg-main);
+            background-image: linear-gradient(to right, var(--bg-main) 35%, rgba(245, 244, 240, 0) 100%), url('header-bg.png');
+            background-size: contain;
+            background-position: right center;
+            background-repeat: no-repeat;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--line-color);
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+            padding: 0;">
+
+            <div class="hero-content" style="max-width: 650px; z-index: 5; padding-left: 20px;">
+                <p class="hero-tag" style="letter-spacing: 0.2em; font-size: 10px; margin-bottom: 24px;">RESEARCH PORTFOLIO</p>
+                <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 52px; font-weight: 400; line-height: 1.1; color: var(--text-primary); margin-bottom: 24px;">
+                    Exploring the nature of mind, intelligence, and conscious experience.
+                </h2>
+                <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6; margin-bottom: 40px; max-width: 500px;">
+                    Research, experiments, and design at the intersection of cognitive science, AI, and human experience.
+                </p>
+                
+                <div style="display: flex; gap: 16px; align-items: center;">
+                    <button style="background: #2d2c29; color: #f5f4f0; padding: 14px 28px; border-radius: 30px; border: none; font-size: 14px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                        Explore Research <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <button style="background: transparent; color: var(--text-primary); padding: 14px 24px; border: none; font-size: 14px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                        View All Projects <i class="fa-solid fa-arrow-right" style="opacity: 0.5;"></i>
+                    </button>
+                </div>
             </div>
-            <div class="fibonacci-bg"></div>
+
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 100px; background: linear-gradient(to top, var(--bg-main), transparent); pointer-events: none; z-index: 2;"></div>
         </div>
 
         <!-- Filters -->
